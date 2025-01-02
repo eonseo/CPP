@@ -26,3 +26,38 @@
 
  <p>첫째 줄에 입력으로 주어진 N개의 정수 중에 v가 몇 개인지 출력한다.</p>
 
+---
+# delete
+: 운영체제에 더 이상 쓰지 않는 동적할당된 메모리 반환
+
+
+```c++
+int *ptr;
+
+ptr = new(nothrow) int;
+if (!ptr)
+{
+ cerr << "memory allocation failed" << endl;
+ return -1;
+}
+delete (ptr);
+ptr = NULL;
+
+return 0;
+```
+```c++
+int *arr;
+int n;
+
+std::cin >> n;
+arr = new(nothrow) int[n];
+if (!arr)
+{
+ cerr << "memory allocation failed" << endl;
+ return -1;
+}
+delete[] arr;
+arr = NULL;
+
+return 0;
+```
