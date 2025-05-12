@@ -12,11 +12,7 @@ void	free2dimensionalArr(int **arr) {
 
 int Solution(int **arr) {
 	int sumMax = 0;
-	if (n >= 2) {
-		arr[1][0] = arr[0][0] + arr[1][0];
-		arr[1][1] = arr[0][0] + arr[1][1];
-	}
-	for (int i = 2; i < n; i++) {
+	for (int i = 1; i < n; i++) {
 		for (int j = 0; j <= i; j++) {
 			if (j == 0)
 				arr[i][j] = arr[i - 1][j] + arr[i][j];
